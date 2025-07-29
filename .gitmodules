@@ -1,0 +1,4 @@
+[submodule "infrastructure"]
+	path = infrastructure
+	url = git@gitlab.com:prasetiyohadi/infrastructure.git
+	branch = devel
