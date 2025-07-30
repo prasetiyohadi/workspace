@@ -2,3 +2,7 @@
 	path = infrastructure
 	url = git@gitlab.com:prasetiyohadi/infrastructure.git
 	branch = devel
+[submodule "code"]
+	path = code
+	url = git@github.com:prasetiyohadi/code.git
+	branch = devel
