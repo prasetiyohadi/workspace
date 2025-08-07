@@ -1,0 +1,105 @@
+site_name: Pras' Workspace
+nav:
+  - Home: index.md
+  - Blog:
+      - blog/index.md
+  - Tools: tools
+  - Infrastructure: '!include ./infrastructure/mkdocs.yml'
+  - Code: '!include ./code/mkdocs.yml'
+copyright: Copyright &copy; <a href="https://github.com/prasetiyohadi">Prasetiyo Hadi Purwoko</a>
+remote_branch: main
+remote_name: origin
+repo_name: GitHub
+repo_url: https://github.com/prasetiyohadi/workspace
+# site_url: https://scripts-6si.pages.dev/
+site_author: me@pras.my.id (Prasetiyo Hadi Purwoko)
+site_description: >-
+  System administrator and Linux enthusiast, with topics from ongoing twelve years of experience in the IT industry.
+strict: false
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/prasetiyohadi
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/prasetiyohadi
+    - icon: material/email
+      link: mailto:me@pras.my.id
+      name: Email
+plugins:
+  - search
+  - blog
+  - include_dir_to_nav
+  - privacy
+  - tags
+  - monorepo
+markdown_extensions:
+  # Python Markdown
+  - attr_list
+  - toc:
+      permalink: true
+  # Python Markdown Extensions
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.tasklist:
+      custom_checkbox: true
+theme:
+  language: en
+  name: material
+  # custom_dir: overrides
+  # logo: assets/logo.webp
+  # favicon: assets/favicon.ico
+  features:
+    - announce.dismiss
+    # - content.action.edit
+    # - content.action.view
+    # - content.code.annotate
+    # - content.code.copy
+    # - content.code.select
+    # - content.tabs.link
+    # - content.tooltips
+    # - content.footnote.tooltips
+    - header.autohide
+    - navigation.expand
+    - navigation.footer
+    - navigation.indexes
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.prune
+    - navigation.sections
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.top
+    - navigation.tracking
+    - search.highlight
+    - search.share
+    - search.suggest
+    - toc.follow
+  # font:
+  #   code: Roboto Mono
+  #   text: Roboto
+  icon:
+    next: fontawesome/solid/angle-right
+    previous: fontawesome/solid/angle-left
+    repo: fontawesome/brands/github
+  # palette:
+  #   - media: (prefers-color-scheme)
+  #     toggle:
+  #       icon: material/brightness-auto
+  #       name: Switch to light mode
+  #   - media: "(prefers-color-scheme: light)"
+  #     scheme: default
+  #     primary: teal
+  #     accent: red
+  #     toggle:
+  #       icon: material/brightness-7
+  #       name: Switch to dark mode
+  #   - media: "(prefers-color-scheme: dark)"
+  #     scheme: slate
+  #     primary: teal
+  #     accent: red
+  #     toggle:
+  #       icon: material/brightness-4
+  #       name: Switch to system preference

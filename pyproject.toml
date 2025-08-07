@@ -1,0 +1,17 @@
+[project]
+name = "workspace"
+version = "0.1.0"
+requires-python = ">=3.13"
+dependencies = [
+  "markdown>=3.8.2",
+  "mkdocs-include-dir-to-nav>=1.2.0",
+  "mkdocs-material>=9.6.16",
+  "mkdocs-minify-plugin>=0.8.0",
+  "mkdocs-monorepo-plugin>=1.1.2",
+  "mkdocs-redirects>=1.2.2",
+  "pygments>=2.19.2",
+  "pymdown-extensions>=10.16.1",
+]
+
+[tool.uv.workspace]
+members = ["infrastructure", "code"]
