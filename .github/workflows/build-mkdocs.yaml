@@ -27,7 +27,7 @@ jobs:
 
       # Update submodules repository
       - name: Update submodules
-        run: git submodule update --recursive
+        run: git submodule update  --init
 
       # Install uv
       - name: Install uv
