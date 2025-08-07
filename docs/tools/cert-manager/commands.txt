@@ -1,0 +1,91 @@
+$ mkdir -p cert-manager
+$ cd cert-manager
+$ ls
+$ kubectl get nodes -o wide
+$ kubectl create namespace cert-manager
+$ helm repo add jetstack https://charts.jetstack.io
+$ helm repo update
+$ helm install \\n  cert-manager jetstack/cert-manager \\n  --namespace cert-manager \\n  --version v1.2.0 \\n  --set installCRDs=true
+$ kubectl get pods --namespace cert-manager
+$ cat <<EOF > test-resources.yaml\napiVersion: v1\nkind: Namespace\nmetadata:\n  name: cert-manager-test\n---\napiVersion: cert-manager.io/v1\nkind: Issuer\nmetadata:\n  name: test-selfsigned\n  namespace: cert-manager-test\nspec:\n  selfSigned: {}\n---\napiVersion: cert-manager.io/v1\nkind: Certificate\nmetadata:\n  name: selfsigned-cert\n  namespace: cert-manager-test\nspec:\n  dnsNames:\n    - example.com\n  secretName: selfsigned-cert-tls\n  issuerRef:\n    name: test-selfsigned\nEOF
+$ vi test-resources.yaml
+$ kubectl get pods --namespace cert-manager
+$ kubectl -n cert-manager get services
+$ kubectl -n cert-manager get pods
+$ kubectl -n cert-manager logs cert-manager-cainjector-74459fcc56-hjcmf --follow
+$ kubectl -n cert-manager get pods
+$ kubectl apply -f test-resources.yaml
+$ kubectl describe certificate -n cert-manager-test
+$ kubectl delete -f test-resources.yaml
+$ curl -L -o kubectl-cert-manager.tar.gz https://github.com/jetstack/cert-manager/releases/download/v1.2.0/kubectl-cert_manager-linux-amd64.tar.gz
+$ tar xzf kubectl-cert-manager.tar.gz
+
+
+$ sudo install -m 755 kubectl-cert_manager /usr/local/bin/kubectl-cert_manager
+$ kubectl cert-manager help
+$ kubectl get certificate
+$ kubectl get certificate -A
+$ curl -LO https://cert-manager.io/docs/tutorials/acme/example/staging-issuer.yaml
+$ curl -LsO https://cert-manager.io/docs/tutorials/acme/example/production-issuer.yaml
+$ ls
+$ vi staging-issuer.yaml
+$ kubectl create --edit -f https://cert-manager.io/docs/tutorials/acme/example/staging-issuer.yaml
+$ kubectl -n cert-manager create --edit -f https://cert-manager.io/docs/tutorials/acme/example/staging-issuer.yaml
+$ kubectl -n cert-manager issuer
+$ kubectl -n cert-manager get issuers.cert-manager.io
+$ kubectl -n cert-manager delete -f https://cert-manager.io/docs/tutorials/acme/example/staging-issuer.yaml
+$ kubectl -n cert-manager get issuers.cert-manager.io
+$ kubectl -n argocd create --edit -f https://cert-manager.io/docs/tutorials/acme/example/staging-issuer.yaml
+$ kubectl -n argocd get issuers.cert-manager.io
+$ kubectl -n argocd create --edit -f https://cert-manager.io/docs/tutorials/acme/example/production-issuer.yaml
+$ kubectl -n argocd describe issuer letsencrypt-staging
+
+10278* vi ingress-ssl-passthrough-le.yaml
+10279* kubectl -n argocd apply --filename ingress-ssl-passthrough-le.yaml
+10280* vi ingress-ssl-passthrough-le.yaml
+10281* kubectl -n argocd get certificate
+10282* kubectl -n argocd describe certificate argocd-secret
+
+$ ls
+$ vi staging-issuer.yaml
+$ kubectl get issuer
+$ kubectl get issuer -A
+$ kubectl get clusterissuer -A
+$ kubectl -n argocd describe issuer letsencrypt-staging
+$ kubectl -n argocd get certificaterequests.cert-manager.io
+$ kubectl -n argocd get orders.acme.cert-manager.io
+$ kubectl -n argocd get certificaterequests.cert-manager.io
+$ kubectl -n argocd describe certificaterequests.cert-manager.io argocd-secret-kfsc9
+
+10293* vi ingress-ssl-passthrough-le.yaml
+10294* kubectl -n argocd apply --filename ingress-ssl-passthrough-le.yaml
+10295* kubectl -n argocd get certificate
+10296* kubectl -n argocd get certificaterequests.cert-manager.io
+10297* kubectl -n argocd get certificate
+10298* kubectl -n argocd describe certificate argocd-secret
+10299* kubectl -n argocd describe certificaterequests.cert-manager.io argocd-secret-kcx22
+10300* kubectl -n cert-manager get orders.acme.cert-manager.io
+10301* kubectl -n argocd get orders.acme.cert-manager.io
+10302* kubectl -n argocd describe orders.acme.cert-manager.io argocd-secret-kcx22-1523270838
+10303* kubectl -n argocd get challenges.acme.cert-manager.io
+10304* kubectl -n argocd describe challenges.acme.cert-manager.io argocd-secret-kcx22-1523270838-1267213838
+10305* curl -L http://localargocd.ackd.me/.well-known/acme-challenge/NWmuzmXDOAWDZyc_ma8_cidSSajMD9jHJxvJ1xDwqOY
+10306* dig localargocd.ackd.me
+10307* sudo vi /etc/hosts
+10308* dig localargocd.ackd.me
+10309* ping localargocd.ackd.me
+10310* kubectl -n argocd describe challenges.acme.cert-manager.io argocd-secret-kcx22-1523270838-1267213838
+10311* ping localargocd.ackd.me
+10312* kubectl -n argocd describe challenges.acme.cert-manager.io argocd-secret-kcx22-1523270838-1267213838
+10313* vi ingress-ssl-passthrough-le.yaml
+10314* vi ingress-ssl-passthrough.yaml
+10315* vi ingress-ssl-passthrough-le.yaml
+10316* curl -L http://localargocd.ackd.me/.well-known/acme-challenge/NWmuzmXDOAWDZyc_ma8_cidSSajMD9jHJxvJ1xDwqOY
+10317* kubectl -n argocd get ingresses.networking.k8s.io
+10318* kubectl -n argocd describe challenges.acme.cert-manager.io argocd-secret-kcx22-1523270838-1267213838
+
+$ kubectl -n argocd delete -f https://cert-manager.io/docs/tutorials/acme/example/production-issuer.yaml
+
+10320* kubectl -n argocd delete --filename ingress-ssl-passthrough-le.yaml
+
+$ kubectl -n argocd delete -f https://cert-manager.io/docs/tutorials/acme/example/staging-issuer.yaml

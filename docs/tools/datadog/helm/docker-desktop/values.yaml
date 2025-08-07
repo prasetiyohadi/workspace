@@ -1,0 +1,16 @@
+---
+datadog:
+  # Uncomment this to set cluster name in Helm values file
+  clusterName: local
+
+  # Enable auto-discovery of metrics endpoint of applications which using
+  # OpenMetrics
+  prometheusScrape:
+    enabled: true
+
+  # Datadog site
+  site: datadoghq.com
+
+  # Uncomment this if the cluster using self-generated certificates
+  kubelet:
+    tlsVerify: false

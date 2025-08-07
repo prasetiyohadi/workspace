@@ -1,0 +1,6 @@
+*.env
+*.pyc
+*.swp
+*pub_keys
+cache
+retries

@@ -1,0 +1,12 @@
+---
+image: gitlab/gitlab-runner:v13.12.0
+runners:
+  config: |
+    [[runners]]
+      [runners.kubernetes]
+        image = "bitnami/minideb:buster"
+  imagePullSecrets:
+    - docker-registry
+securityContext:
+  fsGroup: 999
+  runAsUser: 999

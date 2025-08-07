@@ -1,0 +1,5 @@
+# Inframap
+
+Read your tfstate or HCL to generate a graph specific for each provider, showing only the resources that are most important/relevant.
+
+[Github repository](https://github.com/cycloidio/inframap)

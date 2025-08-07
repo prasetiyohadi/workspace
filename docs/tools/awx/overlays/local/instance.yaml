@@ -1,0 +1,11 @@
+---
+apiVersion: awx.ansible.com/v1beta1
+kind: AWX
+metadata:
+  name: awx-local
+  namespace: awx
+spec:
+  ingress_type: ingress
+  hostname: awx.127.0.0.1.sslip.io
+  ingress_annotations: |
+    environment: local
