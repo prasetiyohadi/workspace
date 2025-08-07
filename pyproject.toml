@@ -16,7 +16,7 @@ dependencies = [
 [tool.setuptools]
 # Workaround for issue with Cloudflare Pages
 # ref: https://stackoverflow.com/questions/72294299/multiple-top-level-packages-discovered-in-a-flat-layout
-py_modules = []
+py-modules = []
 
 [tool.uv.workspace]
 members = ["infrastructure", "code"]
