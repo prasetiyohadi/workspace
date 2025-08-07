@@ -1,0 +1,15 @@
+---
+- hosts: localhost
+  tasks:
+    - debug:
+        msg: "notsecret: {{ notsecret }}"
+    - debug:
+        msg: "mysecret: {{ mysecret }}"
+    - debug:
+        msg: "other_plain_text: {{ other_plain_text }}"
+    - debug:
+        msg: "{% for user in sensu_uchiwa_users %}{{ user.username }} {{ user.password }}{% endfor %}"
+    - debug:
+        msg: "sensu_api_user_name: {{ sensu_api_user_name }}"
+    - debug:
+        msg: "sensu_api_password: {{ sensu_api_password }}"

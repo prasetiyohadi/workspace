@@ -1,0 +1,37 @@
+---
+# Enable ingress with domain 127.0.0.1.sslip.io
+alertmanager:
+  ingress:
+    enabled: true
+    hosts:
+      - alertmanager.127.0.0.1.sslip.io
+    paths:
+      - /
+    pathType: Prefix
+grafana:
+  ingress:
+    enabled: true
+    hosts:
+      - grafana.127.0.0.1.sslip.io
+    paths:
+      - /
+    pathType: Prefix
+prometheus:
+  ingress:
+    enabled: true
+    hosts:
+      - prometheus.127.0.0.1.sslip.io
+    paths:
+      - /
+    pathType: Prefix
+  prometheusSpec:
+    storageSpec:
+      volumeClaimTemplate:
+        spec:
+          storageClassName: hostpath
+          accessModes: ["ReadWriteOnce"]
+          resources:
+            requests:
+              storage: 1Gi
+prometheus-node-exporter:
+  hostRootFsMount: false
