@@ -13,5 +13,10 @@ dependencies = [
   "pymdown-extensions>=10.16.1",
 ]
 
+[tool.setuptools]
+# Workaround for issue with Cloudflare Pages
+# ref: https://stackoverflow.com/questions/72294299/multiple-top-level-packages-discovered-in-a-flat-layout
+py_modules = []
+
 [tool.uv.workspace]
 members = ["infrastructure", "code"]
