@@ -25,6 +25,10 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
 
+      # Update submodules repository
+      - name: Update submodules
+        run: git submodule update --recursive
+
       # Install uv
       - name: Install uv
         uses: astral-sh/setup-uv@v6
