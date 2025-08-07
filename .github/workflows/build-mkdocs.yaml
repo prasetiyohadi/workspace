@@ -35,11 +35,13 @@ jobs:
         with:
           # Install a specific version of uv.
           version: "0.8.5"
+          # Enable caching
+          enable-cache: true
 
       # Sync Python packages
       - name: Sync uv
-        run: uv sync --active
+        run: uv sync --active --locked
 
       # Build mkdocs site
       - name: Build mkdocs
-        run: mkdocs build --clean
+        run: uv run mkdocs build --clean
