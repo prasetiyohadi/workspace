@@ -3,9 +3,9 @@ nav:
   - Home: index.md
   - Blog:
       - blog/index.md
-  - Tools: tools
-  - Infrastructure: '!include ./infrastructure/mkdocs.yml'
   - Code: '!include ./code/mkdocs.yml'
+  - Infrastructure: '!include ./infrastructure/mkdocs.yml'
+  - Tools: tools
 copyright: Copyright &copy; <a href="https://github.com/prasetiyohadi">Prasetiyo Hadi Purwoko</a>
 remote_branch: main
 remote_name: origin
