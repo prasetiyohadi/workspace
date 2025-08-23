@@ -1,8 +1,8 @@
 site_name: Pras' Workspace
 nav:
-  - Home: index.md
+  - Home: README.md
   - Blog:
-      - blog/index.md
+      - blog
   - Code: '!include ./code/mkdocs.yml'
   - Infrastructure: '!include ./infrastructure/mkdocs.yml'
   - Tools: tools
