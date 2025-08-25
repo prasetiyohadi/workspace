@@ -51,6 +51,7 @@ jobs:
       name: github-pages
       url: ${{steps.deployment.outputs.page_url}}
     runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' # Only runs if the current branch is 'main'
     permissions:
       contents: read
       pages: write
