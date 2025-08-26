@@ -26,8 +26,8 @@ extra:
       name: Email
 plugins:
   - search
-  - blog
   - include_dir_to_nav
+  - blog
   - privacy
   - tags
   - monorepo
@@ -37,11 +37,17 @@ markdown_extensions:
   - toc:
       permalink: true
   # Python Markdown Extensions
-  - pymdownx.highlight
-  - pymdownx.superfences
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight
+  - pymdownx.snippets:
+      base_path:
+        - !relative $config_dir
+        - !relative $config_dir/code
+        - !relative $config_dir/infrastructure
+      check_paths: true
+  - pymdownx.superfences
   - pymdownx.tasklist:
       custom_checkbox: true
 theme:
