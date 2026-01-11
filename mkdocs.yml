@@ -34,6 +34,7 @@ plugins:
 markdown_extensions:
   # Python Markdown
   - attr_list
+  - md_in_html
   - toc:
       permalink: true
   # Python Markdown Extensions
@@ -53,7 +54,7 @@ markdown_extensions:
 theme:
   language: en
   name: material
-  # custom_dir: overrides
+  custom_dir: overrides
   # logo: assets/logo.webp
   # favicon: assets/favicon.ico
   features:
@@ -61,7 +62,7 @@ theme:
     # - content.action.edit
     # - content.action.view
     # - content.code.annotate
-    # - content.code.copy
+    - content.code.copy
     # - content.code.select
     # - content.tabs.link
     # - content.tooltips
@@ -82,32 +83,39 @@ theme:
     - search.share
     - search.suggest
     - toc.follow
-  # font:
-  #   code: Roboto Mono
-  #   text: Roboto
+  font:
+    code: JetBrains Mono
+    text: Inter
   icon:
     next: fontawesome/solid/angle-right
     previous: fontawesome/solid/angle-left
     repo: fontawesome/brands/github
-    # palette:
-    #   - media: (prefers-color-scheme)
-    #     toggle:
-    #       icon: material/brightness-auto
-    #       name: Switch to light mode
-    #   - media: "(prefers-color-scheme: light)"
-    #     scheme: default
-    #     primary: teal
-    #     accent: red
-    #     toggle:
-    #       icon: material/brightness-7
-    #       name: Switch to dark mode
-    #   - media: "(prefers-color-scheme: dark)"
-    #     scheme: slate
-    #     primary: teal
-    #     accent: red
-    #     toggle:
-    #       icon: material/brightness-4
-    #       name: Switch to system preference
+  palette:
+    # Scheme 1: System Preference (Auto)
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+    # Scheme 2: Light Mode (Cloud Dancer)
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Scheme 3: Dark Mode (Mood Mode)
+    # We use slate as the base for "Mood Mode"
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: cyan
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference
+extra_css:
+  - stylesheets/extra.css
+  - stylesheets/hero.css
 exclude_docs: |
   my-code-docs/blog.md
   my-code-docs/markdown.md

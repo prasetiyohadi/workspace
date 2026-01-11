@@ -1,0 +1,194 @@
+/* LIGHT MODE: 2026 "Cloud Dancer" Aesthetic */
+:root [data-md-color-scheme="default"] {
+  --md-default-bg-color: #F0EEE9;        /* Cloud Dancer (Warm White) */
+  --md-default-bg-color--light: #E5E2DA; /* Slightly deeper neutral */
+
+  --md-default-fg-color: #161B2E;        /* Deep Indigo Text */
+  --md-default-fg-color--light: #5A6072;
+ 
+  --md-primary-fg-color: #F0EEE9;
+  --md-primary-fg-color--dark: #DEDAD1;
+  --md-primary-bg-color: #161B2E;
+
+  --md-typeset-a-color: #5A6072;
+
+  /* Accent: Deepened Violet for better contrast on light bg */
+  --md-accent-fg-color: #5641D9; 
+ 
+  /* Bento Grid Card - Light Mode */
+  --card-bg: rgba(255, 255, 255, 0.5);
+  --card-border: rgba(22, 27, 46, 0.1);
+}
+
+/* LIGHT MODE: Grounded Typography */
+:root [data-md-color-scheme="default"] .md-content h1 {
+  /* Replace the transparent gradient with a solid, deep indigo for punchy legibility */
+  background: none;
+  -webkit-text-fill-color: initial;
+  color: #161B2E; /* Deep Indigo */
+  font-weight: 850;
+  letter-spacing: -0.03em;
+  text-shadow: none;
+}
+
+/* Optional: Add a subtle 'ink' blue gradient if you still want a 2026 flair */
+:root [data-md-color-scheme="default"] .md-content h1 {
+  background: linear-gradient(135deg, #161B2E 0%, #316263 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Dimming the mesh balls in Light Mode */
+:root [data-md-color-scheme="default"] .mesh-ball {
+    opacity: 0.08; /* Much lighter than the 0.15 used in Dark Mode */
+    filter: blur(100px); /* Wider blur to make it less "hot" */
+}
+
+/* Adjusting the Glass Header for Light Mode */
+:root [data-md-color-scheme="default"] .md-header {
+    background-color: rgba(240, 238, 233, 0.8) !important; /* Cloud Dancer Base */
+    border-bottom: 1px solid rgba(22, 27, 46, 0.05);
+}
+
+/* LIGHT MODE: Solid Tactile Buttons */
+:root [data-md-color-scheme="default"] .md-button--primary {
+    background-color: #161B2E !important; /* Deep Indigo Background */
+    color: #F0EEE9 !important;             /* Cloud Dancer Text */
+    border: 1px solid #161B2E !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+/* Hover State for Light Mode */
+:root [data-md-color-scheme="default"] .md-button--primary:hover {
+    background-color: #316263 !important; /* Transformative Teal on hover */
+    border-color: #316263 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(49, 98, 99, 0.2);
+}
+
+/* Secondary Buttons in Light Mode */
+:root [data-md-color-scheme="default"] .md-button {
+    border-color: #161B2E;
+    color: #161B2E;
+}
+
+:root [data-md-color-scheme="default"] .bento-container > ul > li {
+    border: 1px solid rgba(22, 27, 46, 0.08) !important;
+    background-color: #F7F6F3 !important; /* Slightly off-base white for depth */
+}
+
+:root [data-md-color-scheme="default"] .bento-container > ul > li .md-button {
+    margin-top: auto; /* Pushes button to bottom of card */
+    display: inline-block;
+    text-align: center;
+}
+
+:root [data-md-color-scheme="default"] .md-nav__link--active {
+    color: inherit;
+}
+
+/* DARK MODE: 2026 "Mood Mode" (Existing) */
+:root [data-md-color-scheme="slate"] {
+  /* 2026 Mood Mode Palette Overrides */
+  --md-default-bg-color: #0B0E17;        /* Midnight Void */
+  --md-default-bg-color--light: #161B2E; /* Deep Indigo Surface */
+
+  --md-default-fg-color: #E6E8F0;        /* Stardust White */
+  --md-default-fg-color--light: #8D93A8;  /* Lunar Ash */
+  --md-default-fg-color--lighter: #4A5169;
+
+  /* Primary Branding (Header, Sidebar background) */
+  --md-primary-fg-color: #161B2E;
+  --md-primary-fg-color--dark: #070A0F;
+  --md-primary-bg-color: #E6E8F0;
+
+  /* Accent (Links, Buttons, Toggles) */
+  --md-accent-fg-color: #00F0FF;         /* Cyber Cyan */
+  --md-accent-fg-color--transparent: rgba(0, 240, 255, 0.1);
+
+  /* Bento Grid Card - Dark Mode */
+  --card-bg: rgba(22, 27, 46, 0.7);
+  --card-border: rgba(0, 240, 255, 0.1);
+}
+
+/* Styling the Page Title (h1) */
+:root [data-md-color-scheme="slate"] .md-content h1 {
+  background: linear-gradient(90deg, #E6E8F0 0%, #8D93A8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-top: 2em;
+}
+
+/* Dark Mode Button Overrides */
+:root [data-md-color-scheme="slate"] .md-button--primary {
+    background-color: rgba(0, 240, 255, 0.1) !important; /* Cyber Cyan Tint */
+    color: #00F0FF !important;                          /* Cyber Cyan Text */
+    border: 1px solid #00F0FF !important;               /* Solid Cyan Edge */
+    backdrop-filter: blur(4px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 0 10px rgba(0, 240, 255, 0.2);
+}
+
+/* Hover State: "Power On" Effect */
+:root [data-md-color-scheme="slate"] .md-button--primary:hover {
+    background-color: #00F0FF !important;               /* Fill with Cyan */
+    color: #0B0E17 !important;                          /* Dark text for contrast */
+    box-shadow: 0 0 25px rgba(0, 240, 255, 0.6);        /* Intense Glow */
+    transform: translateY(-2px);
+}
+
+/* Secondary/Standard Buttons */
+:root [data-md-color-scheme="slate"] .md-button {
+    border-color: rgba(141, 147, 168, 0.4);
+    color: #E6E8F0;
+}
+
+
+/* DARK MODE: Sidebar Navigation Refinement */
+:root [data-md-color-scheme="slate"] .md-nav__link {
+    padding: 0.35rem 0.75rem !important; /* Reduced from 0.5rem 1rem */
+    margin-bottom: 2px !important;       /* Minimal gap between items */
+    border-radius: 6px;
+    font-size: 0.75rem;                  /* Slightly smaller font for a cleaner look */
+    line-height: 1.4;
+}
+
+/* Hover State: Subtle Indigo Lift */
+:root [data-md-color-scheme="slate"] .md-nav__link:hover {
+    background-color: rgba(141, 147, 168, 0.1); /* Lunar Ash at low opacity */
+    color: #00F0FF !important; /* Cyber Cyan highlight */
+}
+
+/* Active State: The "Glow Pill" */
+:root [data-md-color-scheme="slate"] .md-nav__link--active {
+    background-color: rgba(0, 240, 255, 0.08) !important; /* Cyan tint background */
+    color: #00F0FF !important; /* Cyber Cyan text */
+    font-weight: 700;
+    padding-left: calc(1rem - 3px) !important; /* Compensates for the border width */
+}
+
+/* Nav Header (Section Titles) */
+:root [data-md-color-scheme="slate"] .md-nav__title {
+    padding: 0.75rem 0.75rem 0.25rem 0.75rem !important; /* Tighter padding */
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-size: 0.65rem;
+    color: #4A5169 !important; /* Muted Carbon */
+}
+
+/* Transition */
+/* Add to extra.css */
+body,
+.md-header,
+.md-footer,
+.md-content__inner,
+.bento-container > ul > li {
+    transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1), 
+                color 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+                border-color 0.5s ease;
+}

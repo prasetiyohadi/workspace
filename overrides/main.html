@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+
+{% block extrahead %}
+  {{ super() }}
+  <style>
+    /* Inlining the mesh logic for performance, or keep in extra.css */
+    .mesh-gradient-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 400px; /* Adjust based on how deep you want the glow */
+      overflow: hidden;
+      z-index: -1; /* Sits behind the text */
+      pointer-events: none;
+    }
+
+    .mesh-ball {
+      position: absolute;
+      border-radius: 50%;
+
+      filter: blur(80px);
+      opacity: 0.15; /* Keeps it subtle for "Mood Mode" */
+    }
+
+    .ball-1 {
+      width: 400px;
+      height: 400px;
+      background: #00F0FF; /* Cyber Cyan */
+      top: -100px;
+      right: -50px;
+    }
+
+    .ball-2 {
+      width: 300px;
+      height: 300px;
+      background: #6E56FF; /* Electric Violet */
+      top: 50px;
+      left: -50px;
+    }
+
+    /* Reading progress */
+    #reading-progress {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 2px;
+      width: 0%;
+      background: #00F0FF; /* Cyber Cyan */
+      box-shadow: 0 0 10px rgba(0, 240, 255, 0.8), 0 0 5px rgba(0, 240, 255, 0.5);
+      z-index: 100;
+      transition: width 0.1s ease-out;
+    }
+  </style>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const progressBar = document.getElementById("reading-progress");
+
+      window.onscroll = function() {
+        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (winScroll / height) * 100;
+        progressBar.style.width = scrolled + "%";
+      };
+    });
+  </script>
+
+
+  <script>
+  document.addEventListener("DOMContentLoaded", function() {
+      const buttons = document.querySelectorAll('.filter-btn');
+      const projects = document.querySelectorAll('.bento-container > ul > li');
+
+      buttons.forEach(button => {
+          button.addEventListener('click', () => {
+              // 1. Update Active Button State
+              buttons.forEach(btn => btn.classList.remove('active'));
+              button.classList.add('active');
+
+              // 2. Get Filter Value
+              const filter = button.getAttribute('data-filter');
+
+              // 3. Filter Projects
+              projects.forEach(project => {
+
+                  if (filter === 'all') {
+                      project.classList.remove('project-card-hidden');
+                  } else {
+                      // Check if the project has the category class (e.g., .cat-coding)
+                      if (project.classList.contains('cat-' + filter)) {
+                          project.classList.remove('project-card-hidden');
+                      } else {
+                          project.classList.add('project-card-hidden');
+                      }
+                  }
+              });
+          });
+      });
+  });
+  </script>
+{% endblock %}
+
+{% block header %}
+  {{ super() }}
+  <div id="reading-progress"></div>
+{% endblock %}
+
+{% block hero %}
+  <div class="mesh-gradient-container">
+    <div class="mesh-ball ball-1"></div>
+    <div class="mesh-ball ball-2"></div>
+  </div>
+  {{ super() }}
+{% endblock %}

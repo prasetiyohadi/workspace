@@ -1,0 +1,17 @@
+/* Progress Bar Enhancement */
+#reading-progress {
+    /* Giving it a slight gradient so it looks like moving light */
+    background: linear-gradient(90deg, #6E56FF 0%, #00F0FF 50%, #00F0FF 100%);
+    border-radius: 0 2px 2px 0;
+}
+
+/* Optional: Make the bar pulse slightly */
+@keyframes pulse-glow {
+    0% { opacity: 0.8; box-shadow: 0 0 5px #00F0FF; }
+    50% { opacity: 1; box-shadow: 0 0 15px #00F0FF; }
+    100% { opacity: 0.8; box-shadow: 0 0 5px #00F0FF; }
+}
+
+#reading-progress {
+    animation: pulse-glow 2s infinite ease-in-out;
+}

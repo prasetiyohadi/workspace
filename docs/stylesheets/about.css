@@ -1,0 +1,79 @@
+/* Layout for the About Section */
+.about-container {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.about-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.skill-zone {
+    flex: 1;
+    min-width: 300px;
+    background: rgba(22, 27, 46, 0.4);
+    padding: 20px;
+    border-radius: 15px;
+    border: 1px solid rgba(141, 147, 168, 0.1);
+}
+
+/* Skill Bar Styling */
+.skill-label {
+    font-size: 0.85rem;
+    color: #8D93A8;
+    margin-bottom: 5px;
+    display: block;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.skill-bar {
+    width: 100%;
+    height: 8px;
+    background: #070A0F;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+.skill-fill {
+    height: 100%;
+    border-radius: 10px;
+    position: relative;
+    transition: width 1.5s cubic-bezier(0.1, 0, 0.2, 1);
+}
+
+/* 2026 Color Accents */
+.skill-fill.cyan {
+    background: linear-gradient(90deg, #00F0FF, #00A3FF);
+    box-shadow: 0 0 10px rgba(0, 240, 255, 0.4);
+}
+
+.skill-fill.violet {
+    background: linear-gradient(90deg, #6E56FF, #A085FF);
+    box-shadow: 0 0 10px rgba(110, 86, 255, 0.4);
+}
+
+/* Subtle pulse effect for the skill fills */
+.skill-fill::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    animation: scan 3s infinite;
+}
+
+@keyframes scan {
+
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+

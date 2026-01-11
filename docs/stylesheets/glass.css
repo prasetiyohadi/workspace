@@ -1,0 +1,78 @@
+/* Customizing the Header for a "Glass" look */
+
+.md-header {
+  background-color: rgba(22, 27, 46, 0.8) !important;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(141, 147, 168, 0.1);
+}
+
+/* Subtle Glow on Code Blocks */
+.md-typeset pre > code {
+  border: 1px solid rgba(110, 86, 255, 0.2);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Search bar styling */
+.md-search__form {
+  background-color: #161B2E !important;
+  border-radius: 8px;
+}
+
+/* Enhancing the "Project" cards visibility */
+.md-typeset .grid.cards > :is(ul, ol) > li, 
+.md-typeset .grid > .card {
+  background-color: rgba(22, 27, 46, 0.7) !important; /* Semi-transparent Indigo */
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 240, 255, 0.1);
+  transition: border 0.3s ease, transform 0.3s ease;
+}
+
+.md-typeset .grid.cards > :is(ul, ol) > li:hover {
+  border-color: #00F0FF;
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(0, 240, 255, 0.1);
+}
+
+
+/* Glassmorphism Header Override */
+.md-header {
+  /* Using your Deep Indigo (#161B2E) with 70% opacity */
+  background-color: rgba(22, 27, 46, 0.7) !important;
+  
+  /* The core glass effect */
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  
+  /* Subtle border to define the edge (Stardust White at 10% opacity) */
+  border-bottom: 1px solid rgba(230, 232, 240, 0.1);
+  
+  /* Removing the default heavy shadow for a cleaner 2026 look */
+  box-shadow: none !important;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+/* Enhancing the header when it's "stuck" (scrolled) */
+header[data-md-state="shadow"] {
+  background-color: rgba(22, 27, 46, 0.85) !important; /* Slightly more opaque */
+  border-bottom: 1px solid rgba(0, 240, 255, 0.2); /* Cyber Cyan glow on scroll */
+}
+
+/* Ensuring the search box also looks like glass */
+.md-search__form {
+    background-color: rgba(11, 14, 23, 0.5) !important;
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(141, 147, 168, 0.2);
+}
+
+/* Glow effect for navigation tabs */
+.md-tabs__link {
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+.md-tabs__item--active .md-tabs__link,
+.md-tabs__link:hover {
+    color: #00F0FF !important; /* Cyber Cyan */
+    text-shadow: 0 0 8px rgba(0, 240, 255, 0.5);
+}
+
+
