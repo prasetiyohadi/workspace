@@ -1,0 +1,116 @@
+/* Target the generated list within the grid div */
+.bento-container > ul {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-auto-rows: 220px;
+    gap: 1rem;
+    list-style: none;
+    padding: 0;
+}
+
+/* Base Card Styling */
+.bento-container > ul > li {
+    background-color: var(--card-bg) !important;
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--card-border) !important;
+    border-radius: 20px !important;
+    margin: 0 !important; /* Material adds margins to lists; we clear them */
+}
+
+/* Desktop Asymmetry Logic */
+@media screen and (min-width: 60em) {
+    .bento-wide {
+        grid-column: span 2;
+    }
+    .bento-tall {
+        grid-row: span 2;
+    }
+}
+
+/* Ensure images fit perfectly within Bento cards */
+.bento-container img {
+    border-radius: 12px;
+    margin-top: 1rem;
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border: 1px solid rgba(141, 147, 168, 0.2);
+    transition: transform 0.5s ease;
+}
+
+.bento-container li:hover img {
+    transform: scale(1.03);
+}
+
+/* 2026 "Pill" Tags for Tech Stacks */
+code {
+    background-color: rgba(110, 86, 255, 0.1) !important; /* Electric Violet Tint */
+    color: #00F0FF !important; /* Cyber Cyan */
+    border: 1px solid rgba(0, 240, 255, 0.2) !important;
+    padding: 2px 8px !important;
+    border-radius: 20px !important;
+    font-size: 0.7rem !important;
+    margin-right: 4px;
+}
+
+/* Featured Badge */
+strong {
+    color: #E6E8F0;
+}
+
+.bento-container li p:first-of-type strong {
+    color: #6E56FF; /* Electric Violet for the project titles */
+    font-size: 1.1rem;
+}
+
+
+/* Filter Container */
+.filter-wrapper {
+    display: flex;
+
+    gap: 10px;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+
+}
+
+/* Glassmorphism Buttons */
+.filter-btn {
+    background: rgba(22, 27, 46, 0.6);
+    border: 1px solid rgba(141, 147, 168, 0.2);
+    color: #8D93A8;
+    padding: 8px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.filter-btn:hover {
+
+    border-color: rgba(0, 240, 255, 0.5);
+    color: #E6E8F0;
+
+}
+
+/* Active State: Cyber Cyan Glow */
+.filter-btn.active {
+
+    background: rgba(0, 240, 255, 0.1);
+    border-color: #00F0FF;
+    color: #00F0FF;
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.2);
+}
+
+/* Hiding cards that don't match the filter */
+.project-card-hidden {
+    display: none !important;
+}
+
+/* Smooth transition for grid items */
+.bento-container > ul > li {
+    transition: opacity 0.4s transform 0.4s ease;
+}
+

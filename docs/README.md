@@ -42,6 +42,6 @@ increase engineers productivity using the following tools:
 
 ## Let's Connect
 
-[Email :material-email:][email-me]{ .md-button }
+[Email :material-email:][email-me]{ .md-button .md-button--primary }
 
 [email-me]: mailto:me@pras.my.id
