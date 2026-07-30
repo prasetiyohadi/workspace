@@ -7,38 +7,12 @@ hide:
 
 # About Me
 
-<div class="about-container" markdown>
+I am Prasetiyo Hadi Purwoko, a systems administrator and infrastructure
+engineer with over 12 years of experience in the IT industry, currently
+focused on platform and infrastructure engineering.
 
-<div class="about-text" markdown>
-## The Developer Behind the Code
-I am a Full-Stack Engineer specializing in **Bio-Digital interfaces** and high-performance backend systems. My philosophy is built on the belief that software should not only be functional but immersive.
+For my full background and career history, see the [Home](../) page.
 
-Currently based in Indonesia, I spend my time bridging the gap between complex data structures and intuitive human experiences. When I'm not coding, I'm exploring the latest trends in **AI-driven UI** and sustainable tech.
+## Get in touch
 
-</div>
-
-<div class="skill-zone" markdown>
-### Technical Proficiency
-
-**Frontend Architecture**
-{ .skill-label }
-
-<div class="skill-bar"><div class="skill-fill cyan" style="width: 95%;"></div></div>
-
-**Backend & Cloud (Go/Python)**
-{ .skill-label }
-
-<div class="skill-bar"><div class="skill-fill violet" style="width: 88%;"></div></div>
-
-**AI Tooling & LLMs**
-{ .skill-label }
-
-<div class="skill-bar"><div class="skill-fill cyan" style="width: 75%;"></div></div>
-
-**UI/UX Design**
-{ .skill-label }
-
-<div class="skill-bar"><div class="skill-fill violet" style="width: 82%;"></div></div>
-</div>
-
-</div>
+[Email me :material-email:](mailto:me@pras.my.id){ .md-button .md-button--primary }
