@@ -36,7 +36,7 @@ jobs:
           enable-cache: true
       # Sync Python packages
       - name: Sync uv
-        run: uv sync --active --locked
+        run: uv sync --active
       # Build mkdocs site
       - name: Build mkdocs
         run: uv run mkdocs build --clean
