@@ -1,5 +1,5 @@
 ---
-description: &gt;-
+description: >-
   DevOps engineer sharing insight from ongoing 12+ years of experience as
   system administrator. Building cost efficient platform for faster and
   reliable application deployment and operation.
